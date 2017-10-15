@@ -11,6 +11,7 @@
 
 using namespace std;
 
+//Global Functinos for use in the main
 void clearScreen();
 void pickCharacter(Orc *t_orc, Troll *t_troll);
 void exitGame();
@@ -21,7 +22,7 @@ void giveDamage(Character *t_array[]);
 void randomMelee(Character *t_array[]);
 void drawUI(Character *t_array[]);
 
-
+//Global Variables
 int charChoice{ 0 };
 int attackType{ 0 };
 bool isGameActive{ true };
@@ -60,6 +61,10 @@ int main(void)
 	exitGame();
 }
 
+/// <summary>
+/// Function to be called to inflict damage onto the character
+/// </summary>
+/// <param name="t_array">Pointer array for the character addresses</param>
 void takeDamage(Character *t_array[])
 {
 	if (charChoice == 0)
@@ -73,6 +78,10 @@ void takeDamage(Character *t_array[])
 	}
 }
 
+/// <summary>
+/// function to give damage to the enemy character
+/// </summary>
+/// <param name="t_array">Pointer array for the character addresses</param>
 void giveDamage(Character * t_array[])
 {
 	if (charChoice == 0)
@@ -86,6 +95,10 @@ void giveDamage(Character * t_array[])
 	}
 }
 
+/// <summary>
+/// Randomise the Enemies Melee weapon so they change what they attack you with
+/// </summary>
+/// <param name="t_array">Pointer array for the character addresses</param>
 void randomMelee(Character *t_array[])
 {
 	int weaponChoice{ 0 };
@@ -136,7 +149,7 @@ void randomMelee(Character *t_array[])
 		}
 	}
 
-	else if (charChoice == 1);
+	else if (charChoice == 1)
 	{
 		switch (weaponChoice)
 		{
@@ -181,6 +194,10 @@ void randomMelee(Character *t_array[])
 	}
 }
 
+/// <summary>
+/// Layout the Enemy and Player Health on screen
+/// </summary>
+/// <param name="t_array"></param>
 void drawUI(Character * t_array[])
 {
 	clearScreen();
@@ -196,11 +213,19 @@ void drawUI(Character * t_array[])
 	}
 }
 
+/// <summary>
+/// Clear the console screen
+/// </summary>
 void clearScreen()
 {
 	system("cls");
 }
 
+/// <summary>
+/// Function to pick the player character at the start of the game
+/// </summary>
+/// <param name="t_orc">Orc Object</param>
+/// <param name="t_troll">Troll Object</param>
 void pickCharacter(Orc *t_orc, Troll *t_troll)
 {
 	int spellChoice;
@@ -321,11 +346,17 @@ void pickCharacter(Orc *t_orc, Troll *t_troll)
 	}
 }
 
+/// <summary>
+/// Shutdown the console Window
+/// </summary>
 void exitGame()
 {
 	exit(0);
 }
 
+/// <summary>
+/// Intro Story for the game
+/// </summary>
 void travel()
 {
 	cout << "\n You wake from your slumber and make your way into the forest to find some food." ;
@@ -345,9 +376,15 @@ void travel()
 	default:
 		break;
 	}
+	system("Pause");
 	clearScreen();
 }
 
+
+/// <summary>
+/// Function to be looped, and have the ORc and Troll Fight eachother
+/// </summary>
+/// <param name="t_array"></param>
 void fight(Character * t_array[])
 {
 	if (charChoice == 0)

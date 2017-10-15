@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//Enums To hold Spells and Melee Option
 enum OrcSpell {
 	ACIDARROW,
 	BURNINGHANDS,
@@ -53,18 +54,19 @@ enum TrollShield
 	BRONZE,	SILVER,	GOLD
 };
 
+//Character Base Class
 class Character {
 public:
-	void flip() { cout << "I know how to flip and I will flipping do it" << endl; }
-	virtual void walk() { cout << "just in case they are too young to walk yet" << endl; }
-	virtual void fly() = 0; //pure virtual function
+	//Virtual functions to be used by subclasses
 	virtual void cast() = 0;
 	virtual void attack() = 0;
 
+	//Variables to be shared among Subclasses
 	string m_currentSpellName;
 	string m_currentMeleeName;
 	string m_currentShieldName;
 
+	//Characters Healths, mana and Damage
 	int m_health{ 50 };
 	int m_mana{ 100 };
 	int m_damage{ 0 };
@@ -76,12 +78,9 @@ public:
 	int m_ShieldDefense{ 10 };
 };
 
+//Orc Subclass Of Character
 class Orc : public Character {
 public:
-	void barrelRoll() { cout << "rooooooolllllllllllinggggggg" << endl; }
-	void walk() { cout << "Doopers have a really cool walk!" << endl; }
-	void fly() { cout << "Dooper is flapping and flying" << endl; }
-
 	void cast() { cout << "Orc Casts the " << m_currentSpellName << " Spell  For " << m_damage << " Damage" << endl; }
 	void attack() { cout << "Orc attacks with " << m_currentMeleeName << " For " << m_damage << " Damage" << endl;}
 	
@@ -95,10 +94,9 @@ public:
 	OrcShield m_currentShield{ OrcShield::LIGHT };
 };
 
+//Troll SubClass of Character
 class Troll : public Character {
 public:
-	void fly() { cout << "Average Dooper is flapping and flying" << endl; }
-
 	void cast() { cout << "Troll casts the " << m_currentSpellName << " Spell For " << m_damage << " Damage" << endl; }
 	void attack() { cout << "Troll Attacks with " << m_currentMeleeName<< " For " << m_damage << " Damage" << endl; }
 

@@ -1,5 +1,6 @@
 #include "Characters.h"
 
+//Setup all the Variables for the starting Spell
 void Troll::setTrollSpellStats(string * t_currentSpellName, TrollSpell t_currentSpell, int *t_manaCost, int *t_damage)
 {
 	switch (t_currentSpell)
@@ -34,6 +35,7 @@ void Troll::setTrollSpellStats(string * t_currentSpellName, TrollSpell t_current
 	}
 }
 
+//Setup all the Variables for the starting Melee
 void Troll::setTrollMeleeName(string * t_currentMeleeName, TrollMelee t_currentMelee, int *t_damage)
 {
 	switch (t_currentMelee)
@@ -71,6 +73,7 @@ void Troll::setTrollMeleeName(string * t_currentMeleeName, TrollMelee t_currentM
 	}
 }
 
+//Setup all the Variables for the starting Shield
 void Troll::setTrollShieldName(string * t_currentShield, TrollShield t_trollShield, int *t_shield)
 {
 
@@ -93,6 +96,7 @@ void Troll::setTrollShieldName(string * t_currentShield, TrollShield t_trollShie
 	}
 }
 
+//Setup all the Variables for the starting Spell for the Orc
 void Orc::setOrcSpellStats(string * t_currentSpellName, OrcSpell t_currentSpell, int *t_manaCost, int *t_damage)
 {
 
@@ -129,6 +133,7 @@ void Orc::setOrcSpellStats(string * t_currentSpellName, OrcSpell t_currentSpell,
 	}
 }
 
+//Setup all the Variables for the starting Melee for the Orc
 void Orc::setOrcMeleeStats(string * t_currentMeleeName, OrcMelee t_currentMelee, int *t_damage)
 {
 	switch (t_currentMelee)
@@ -166,6 +171,7 @@ void Orc::setOrcMeleeStats(string * t_currentMeleeName, OrcMelee t_currentMelee,
 	}
 }
 
+//Setup all the Variables for the starting shield for the Orc
 void Orc::setOrcShieldName(string * t_currentShield, OrcShield t_orcShield, int *t_shield)
 {
 	switch (t_orcShield)
